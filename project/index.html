@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Brasil - Corretora de Seguros</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <img src="img/logo.svg" alt="Segura Mais" id="logo">
+          <h1>Secure Brasil</h1>
+        </div>
+        <nav class="main-nav">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-list" id="navList">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">Sobre Nós</a></li>
+            <li><a href="#insurance">Seguros</a></li>
+            <li><a href="#testimonials">Depoimentos</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h2>Segurança e tranquilidade para o que mais importa</h2>
+          <p>Há mais de 10 anos, a Segura Mais oferece soluções personalizadas em seguros, protegendo o patrimônio e os sonhos de milhares de brasileiros.</p>
+          <a href="#insurance" class="btn btn-primary">Conheça nossos seguros</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">Nossa História</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Fundada em 2012, a Segura Mais nasceu com a missão de democratizar o acesso aos melhores planos de seguro do mercado, oferecendo atendimento personalizado e humanizado.</p>
+            <p>Ao longo desses anos, construímos uma reputação sólida baseada na confiança e na excelência de nossos serviços, ajudando nossos clientes a proteger o que há de mais valioso em suas vidas.</p>
+            <p>Trabalhamos com as principais seguradoras do mercado, garantindo sempre as melhores coberturas com os preços mais competitivos.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">10+</span>
+              <span class="stat-text">Anos de Experiência</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">15k+</span>
+              <span class="stat-text">Clientes Satisfeitos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">98%</span>
+              <span class="stat-text">Taxa de Renovação</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="insurance-types" id="insurance">
+      <div class="container">
+        <h2 class="section-title">Nossos Seguros</h2>
+        <p class="section-subtitle">Selecione um tipo de seguro para saber mais</p>
+        
+        <div class="insurance-buttons">
+          <button class="insurance-btn active" data-target="auto">Automóvel</button>
+          <button class="insurance-btn" data-target="home">Residencial</button>
+          <button class="insurance-btn" data-target="business">Empresarial</button>
+        </div>
+        
+        <div class="insurance-cards">
+          <div class="insurance-card active" id="auto">
+            <div class="card-icon">
+              <img src="img/car-icon.svg" alt="Ícone de Carro">
+            </div>
+            <h3>Seguro Automóvel</h3>
+            <p>Proteja seu veículo contra roubo, furto, colisão e muito mais. Conte com assistência 24h, carro reserva e cobertura para terceiros.</p>
+            <ul class="insurance-features">
+              <li>Cobertura nacional</li>
+              <li>Assistência 24h</li>
+              <li>Carro reserva</li>
+              <li>Cobertura para acessórios</li>
+            </ul>
+            <br>
+            <a href="quote.html?type=auto" class="btn btn-secondary">Fazer Cotação</a>
+            <br>
+          </div>
+          
+          <div class="insurance-card" id="home">
+            <div class = "insurance-card active">
+            <div class="card-icon">
+              <img src="img/home-icon.svg" alt="Ícone de Casa">
+            </div>
+            <h3>Seguro Residencial</h3>
+            <p>Proteção completa para sua casa contra incêndio, roubo, danos elétricos e muito mais. Tenha assistência 24h para reparos emergenciais.</p>
+            <ul class="insurance-features">
+              <li>Cobertura contra incêndio</li>
+              <li>Proteção contra danos elétricos</li>
+              <li>Assistência 24h para reparos</li>
+              <li>Cobertura para equipamentos</li>
+            </ul>
+            <br>
+            <a href="quote.html?type=home" class="btn btn-secondary">Fazer Cotação</a>
+            <br>
+            </div>
+          </div>
+          
+          <div class="insurance-card" id="business">
+            <div class="card-icon">
+              <img src="img/business-icon.svg" alt="Ícone de Empresa">
+            </div>
+            <h3>Seguro Empresarial</h3>
+            <p>Soluções completas para proteger seu negócio contra incêndio, roubo, danos elétricos, lucros cessantes e responsabilidade civil.</p>
+            <ul class="insurance-features">
+              <li>Proteção patrimonial</li>
+              <li>Cobertura para lucros cessantes</li>
+              <li>Responsabilidade civil</li>
+              <li>Equipamentos e estoque</li>
+            </ul>
+            <br>
+            <a href="quote.html?type=business" class="btn btn-secondary">Fazer Cotação</a>
+            <br>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">O que nossos clientes dizem</h2>
+        
+        <div class="testimonial-slider">
+          <div class="testimonial-container" id="testimonialContainer">
+            <div class="testimonial">
+              <div class="testimonial-content">
+                <p>"Excelente atendimento! Consegui um seguro para meu carro com ótimo custo-benefício e quando precisei acionar, fui atendido rapidamente."</p>
+              </div>
+              <div class="testimonial-author">
+                <img src="img/client1.jpg" alt="Carlos Silva">
+                <div>
+                  <h4>Carlos Silva</h4>
+                  <span>Cliente desde 2018</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial">
+              <div class="testimonial-content">
+                <p>"O seguro residencial da Segura Mais me deu muita tranquilidade. Quando tive um problema elétrico, a assistência chegou em menos de 1 hora!"</p>
+              </div>
+              <div class="testimonial-author">
+                <img src="img/client2.jpg" alt="Mariana Costa">
+                <div>
+                  <h4>Mariana Costa</h4>
+                  <span>Cliente desde 2020</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial">
+              <div class="testimonial-content">
+                <p>"Empresa séria e comprometida. Fizeram todo o processo de forma clara e transparente. Recomendo para todos os empresários que buscam proteção."</p>
+              </div>
+              <div class="testimonial-author">
+                <img src="img/client3.jpg" alt="João Mendes">
+                <div>
+                  <h4>João Mendes</h4>
+                  <span>Cliente desde 2019</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-controls">
+            <button class="control-btn prev" id="prevBtn" aria-label="Anterior">&#10094;</button>
+            <div class="testimonial-dots" id="testimonialDots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+              <span class="dot" data-index="2"></span>
+            </div>
+            <button class="control-btn next" id="nextBtn" aria-label="Próximo">&#10095;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="img/logo-white.svg" alt="Segura Mais">
+            <h3>Secure Brasi</h3>
+          </div>
+          <p>Sua corretora de seguros de confiança, oferecendo as melhores soluções em proteção para você, sua família e seu patrimônio.</p>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contato</h3>
+          <ul>
+            <li><strong>Endereço:</strong>Rua 01, N° 01, Centro Comercial MAC Center, Cohaserma., São Luís, Brazil 65072230</li>
+            <li><strong>CNPJ:</strong> 21.935.608/0001-88</li>
+            <li><strong>E-mail:</strong> contato@securenrasil.com.br</li>
+            <li><strong>Telefone:</strong>(98) 93181-7437</li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Redes Sociais</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="img/facebook.svg" alt="Facebook">
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <img src="C:\Users\Samsung\Downloads\design-de-logotipo-de-midia-social\10462345.pngg" alt="Instagram">
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <img src="img/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="#" class="social-icon" aria-label="WhatsApp">
+              <img src="img/whatsapp.svg" alt="WhatsApp">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Secure Brasil Corretora de Seguros. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/insurance-types.js"></script>
+  <script src="js/testimonials.js"></script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+/* Quote Header
+----------------------------------------- */
+.quote-header {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--space-xxl) 0;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.quote-header h2 {
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+}
+
+.quote-header span {
+  color: var(--secondary);
+}
+
+/* Progress Bar
+----------------------------------------- */
+.progress-container {
+  margin-bottom: var(--space-xl);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--gray);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-sm);
+  width: 25%;
+  transition: width var(--transition-normal);
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  position: relative;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--gray);
+  color: var(--dark-gray);
+  border-radius: 50%;
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.step.active .step-number,
+.step.completed .step-number {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.step-text {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--dark-gray);
+  transition: color var(--transition-normal);
+}
+
+.step.active .step-text {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Form Styles
+----------------------------------------- */
+.quote-form {
+  padding: var(--space-xl) 0 var(--space-xxl);
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-xl);
+  position: relative;
+}
+
+.form-step {
+  display: none;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-step h3 {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  color: var(--primary);
+}
+
+.form-row {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  flex: 1 0 100%;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  font-size: 0.9rem;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border: 1px solid var(--gray);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(26, 77, 150, 0.1);
+}
+
+.radio-group {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-xs);
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.radio-option label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.conditional-field {
+  background-color: var(--light-gray);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-xl);
+}
+
+.form-buttons button {
+  min-width: 120px;
+}
+
+.form-buttons .btn-next {
+  margin-left: auto;
+}
+
+/* Quote Result
+----------------------------------------- */
+.quote-result {
+  padding: var(--space-lg) 0;
+}
+
+.quote-plans {
+  display: flex;
+  gap: var(--space-xl);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.plan-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray);
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.plan-card.recommended {
+  border-color: var(--secondary);
+  position: relative;
+  transform: scale(1.05);
+}
+
+.recommended-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--secondary);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-bottom-left-radius: var(--radius-sm);
+}
+
+.plan-header {
+  padding: var(--space-lg);
+  background-color: var(--light-gray);
+  text-align: center;
+  border-bottom: 1px solid var(--gray);
+}
+
+.plan-header h4 {
+  margin-bottom: var(--space-xs);
+}
+
+.plan-price {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+}
+
+.plan-price span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.plan-features {
+  padding: var(--space-lg);
+}
+
+.plan-features ul {
+  list-style: none;
+}
+
+.plan-features li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: var(--space-sm);
+}
+
+.plan-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.quote-note {
+  text-align: center;
+  margin: var(--space-xl) 0;
+  color: var(--dark-gray);
+  font-style: italic;
+}
+
+.quote-cta {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.quote-cta .btn {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.whatsapp-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/whatsapp-black.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Loading & Success Overlays
+----------------------------------------- */
+.loading-overlay,
+.success-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: var(--radius-lg);
+  display: none;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 5px solid var(--gray);
+  border-top: 5px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--space-md);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.success-overlay h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.success-overlay p {
+  text-align: center;
+  max-width: 80%;
+}
+
+/* Responsive Adjustments
+----------------------------------------- */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .step-text {
+    display: none;
+  }
+  
+  .quote-plans {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .plan-card {
+    max-width: 100%;
+  }
+  
+  .plan-card.recommended {
+    order: -1;
+    margin-bottom: var(--space-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .form-container {
+    padding: var(--space-lg);
+  }
+  
+  .form-buttons {
+    flex-direction: column-reverse;
+    gap: var(--space-md);
+  }
+  
+  .form-buttons button {
+    width: 100%;
+  }
+  
+  .progress-steps {
+    justify-content: space-around;
+  }
+  
+  .quote-header {
+    padding: var(--space-xl) 0;
+  }
+}

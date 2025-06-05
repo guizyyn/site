@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotação de Seguro - Secure Brasil</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/quote.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="Segura Mais" id="logo">
+            <h1>Secure Brasil</h1>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-list" id="navList">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">Sobre Nós</a></li>
+            <li><a href="index.html#insurance" class="active">Seguros</a></li>
+            <li><a href="index.html#testimonials">Depoimentos</a></li>
+            <li><a href="index.html#contact">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="quote-header">
+      <div class="container">
+        <h2>Cotação de Seguro <span id="insuranceTypeTitle">Automóvel</span></h2>
+        <p>Preencha o formulário abaixo para receber sua cotação personalizada.</p>
+      </div>
+    </section>
+
+    <section class="quote-form">
+      <div class="container">
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress" id="progressBar"></div>
+          </div>
+          <div class="progress-steps">
+            <div class="step active" data-step="1">
+              <span class="step-number">1</span>
+              <span class="step-text">Dados Pessoais</span>
+            </div>
+            <div class="step" data-step="2">
+              <span class="step-number">2</span>
+              <span class="step-text">Dados do Bem</span>
+            </div>
+            <div class="step" data-step="3">
+              <span class="step-number">3</span>
+              <span class="step-text">Informações Adicionais</span>
+            </div>
+            <div class="step" data-step="4">
+              <span class="step-number">4</span>
+              <span class="step-text">Cotação</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="quoteForm" class="form-container">
+          <!-- Step 1: Dados Pessoais -->
+          <div class="form-step active" id="step1">
+            <h3>Dados Pessoais</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nome Completo*</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="cpf">CPF*</label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="birthdate">Data de Nascimento*</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+              </div>
+              <div class="form-group">
+                <label for="maritalStatus">Estado Civil*</label>
+                <select id="maritalStatus" name="maritalStatus" required>
+                  <option value="">Selecione</option>
+                  <option value="solteiro">Solteiro(a)</option>
+                  <option value="casado">Casado(a)</option>
+                  <option value="divorciado">Divorciado(a)</option>
+                  <option value="viuvo">Viúvo(a)</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="address">Endereço Completo*</label>
+                <input type="text" id="address" name="address" required placeholder="Rua/Estr da Consolação, 123, Centro, São Paulo, 00000-000">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-mail*</label>
+                <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefone*</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(00)00000-0000">
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group" id="driverLicenseGroup">
+                <label for="driverLicense">CNH*</label>
+                <input type="text" id="driverLicense" name="driverLicense" maxlength="11" required placeholder="00000000000">
+              </div>
+            </div>
+            
+            <div class="form-buttons">
+              <button type="button" class="btn btn-secondary btn-next" data-next="2">Próximo</button>
+            </div>
+          </div>
+          
+          <!-- Step 2: Dados do Bem -->
+          <div class="form-step" id="step2">
+            <h3>Dados do <span id="assetTypeLabel">Veículo</span></h3>
+            
+            <!-- Campos para Automóvel -->
+            <div id="autoFields">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="plate">Placa*</label>
+                  <input type="text" id="plate" name="plate" required placeholder="AAA1A11">
+                </div>
+                <div class="form-group">
+                  <label for="chassis">Chassi*</label>
+                  <input type="text" id="chassis" name="chassis">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="manufacturer">Fabricante*</label>
+                  <input type="text" id="manufacturer" name="manufacturer">
+                </div>
+                <div class="form-group">
+                  <label for="model">Modelo*</label>
+                  <input type="text" id="model" name="model">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="year">Ano*</label>
+                  <input type="number" id="year" name="year" maxlength="4">
+                </div>
+                <div class="form-group">
+                  <label for="color">Cor*</label>
+                  <input type="text" id="color" name="color">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="overnightAddress">Endereço de Pernoite*</label>
+                  <input type="text" id="overnightAddress" name="overnightAddress">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Tem cobertura no local de pernoite?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hasCoverageYes" name="hasCoverage" value="sim">
+                      <label for="hasCoverageYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hasCoverageNo" name="hasCoverage" value="nao">
+                      <label for="hasCoverageNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Campos para Residencial -->
+            <div id="homeFields" style="display: none;">
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="homeAddress">Endereço do Imóvel*</label>
+                  <input type="text" id="homeAddress" name="homeAddress">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="propertyType">Tipo de Imóvel*</label>
+                  <select id="propertyType" name="propertyType">
+                    <option value="">Selecione</option>
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="sobrado">Sobrado</option>
+                    <option value="kitnet">Kitnet/Studio</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="constructionType">Tipo de Construção*</label>
+                  <select id="constructionType" name="constructionType">
+                    <option value="">Selecione</option>
+                    <option value="alvenaria">Alvenaria</option>
+                    <option value="madeira">Madeira</option>
+                    <option value="mista">Mista</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="squareMeters">Área (m²)*</label>
+                  <input type="number" id="squareMeters" name="squareMeters" min="1">
+                </div>
+                <div class="form-group">
+                  <label for="constructionYear">Ano de Construção*</label>
+                  <input type="number" id="constructionYear" name="constructionYear" min="1900" max="2030">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Campos para Empresarial -->
+            <div id="businessFields" style="display: none;">
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="companyName">Nome da Empresa*</label>
+                  <input type="text" id="companyName" name="companyName">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cnpj">CNPJ*</label>
+                  <input type="text" id="cnpj" name="cnpj">
+                </div>
+                <div class="form-group">
+                  <label for="businessActivity">Ramo de Atividade*</label>
+                  <input type="text" id="businessActivity" name="businessActivity">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label for="businessAddress">Endereço do Estabelecimento*</label>
+                  <input type="text" id="businessAddress" name="businessAddress">
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="employeeCount">Número de Funcionários*</label>
+                  <input type="number" id="employeeCount" name="employeeCount" min="0">
+                </div>
+                <div class="form-group">
+                  <label for="annualRevenue">Faturamento Anual*</label>
+                  <input type="text" id="annualRevenue" name="annualRevenue">
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-buttons">
+              <button type="button" class="btn btn-outline btn-prev" data-prev="1">Anterior</button>
+              <button type="button" class="btn btn-secondary btn-next" data-next="3">Próximo</button>
+            </div>
+          </div>
+          
+          <!-- Step 3: Informações Adicionais -->
+          <div class="form-step" id="step3">
+            <h3>Informações Adicionais</h3>
+            
+            <!-- Perguntas para Automóvel -->
+            <div id="autoQuestions">
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Viaja com frequência?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="travelsYes" name="travels" value="sim">
+                      <label for="travelsYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="travelsNo" name="travels" value="nao">
+                      <label for="travelsNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Transporta mercadorias?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="transportGoodsYes" name="transportGoods" value="sim">
+                      <label for="transportGoodsYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="transportGoodsNo" name="transportGoods" value="nao">
+                      <label for="transportGoodsNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Tem condutor entre 18 e 25 anos?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="youngDriverYes" name="youngDriver" value="sim">
+                      <label for="youngDriverYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="youngDriverNo" name="youngDriver" value="nao">
+                      <label for="youngDriverNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="youngDriverDetails" class="conditional-field" style="display: none;">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="youngDriverName">Nome do Condutor*</label>
+                    <input type="text" id="youngDriverName" name="youngDriverName">
+                  </div>
+                  <div class="form-group">
+                    <label for="youngDriverAge">Idade*</label>
+                    <input type="number" id="youngDriverAge" name="youngDriverAge" min="18" max="25">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group full-width">
+                    <label for="youngDriverFrequency">Frequência semanal de uso do veículo*</label>
+                    <select id="youngDriverFrequency" name="youngDriverFrequency">
+                      <option value="">Selecione</option>
+                      <option value="1-2">1-2 dias por semana</option>
+                      <option value="3-4">3-4 dias por semana</option>
+                      <option value="5-7">5-7 dias por semana</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Trabalha como Uber ou aplicativo similar?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="uberDriverYes" name="uberDriver" value="sim">
+                      <label for="uberDriverYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="uberDriverNo" name="uberDriver" value="nao">
+                      <label for="uberDriverNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Já tem seguro?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hasInsuranceYes" name="hasInsurance" value="sim">
+                      <label for="hasInsuranceYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hasInsuranceNo" name="hasInsurance" value="nao">
+                      <label for="hasInsuranceNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="insuranceDetails" class="conditional-field" style="display: none;">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="policyNumber">Número da Apólice*</label>
+                    <input type="text" id="policyNumber" name="policyNumber">
+                  </div>
+                  <div class="form-group">
+                    <label for="insurer">Seguradora*</label>
+                    <input type="text" id="insurer" name="insurer">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="bonus">Bônus*</label>
+                    <select id="bonus" name="bonus">
+                      <option value="">Selecione</option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Perguntas para Residencial -->
+            <div id="homeQuestions" style="display: none;">
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>O imóvel possui sistema de alarme?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hasAlarmYes" name="hasAlarm" value="sim">
+                      <label for="hasAlarmYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hasAlarmNo" name="hasAlarm" value="nao">
+                      <label for="hasAlarmNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>O imóvel fica em condomínio fechado?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="isGatedCommunityYes" name="isGatedCommunity" value="sim">
+                      <label for="isGatedCommunityYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="isGatedCommunityNo" name="isGatedCommunity" value="nao">
+                      <label for="isGatedCommunityNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Já teve sinistro nos últimos 3 anos?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hadClaimYes" name="hadClaim" value="sim">
+                      <label for="hadClaimYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hadClaimNo" name="hadClaim" value="nao">
+                      <label for="hadClaimNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Já tem seguro?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hasHomeInsuranceYes" name="hasHomeInsurance" value="sim">
+                      <label for="hasHomeInsuranceYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hasHomeInsuranceNo" name="hasHomeInsurance" value="nao">
+                      <label for="hasHomeInsuranceNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="homeInsuranceDetails" class="conditional-field" style="display: none;">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="homePolicyNumber">Número da Apólice*</label>
+                    <input type="text" id="homePolicyNumber" name="homePolicyNumber">
+                  </div>
+                  <div class="form-group">
+                    <label for="homeInsurer">Seguradora*</label>
+                    <input type="text" id="homeInsurer" name="homeInsurer">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Perguntas para Empresarial -->
+            <div id="businessQuestions" style="display: none;">
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>O local possui sistema de alarme e monitoramento?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hasBusinessAlarmYes" name="hasBusinessAlarm" value="sim">
+                      <label for="hasBusinessAlarmYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hasBusinessAlarmNo" name="hasBusinessAlarm" value="nao">
+                      <label for="hasBusinessAlarmNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Possui sistema de sprinklers/extintores?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hasFireSystemYes" name="hasFireSystem" value="sim">
+                      <label for="hasFireSystemYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hasFireSystemNo" name="hasFireSystem" value="nao">
+                      <label for="hasFireSystemNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Já teve sinistro nos últimos 3 anos?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hadBusinessClaimYes" name="hadBusinessClaim" value="sim">
+                      <label for="hadBusinessClaimYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hadBusinessClaimNo" name="hadBusinessClaim" value="nao">
+                      <label for="hadBusinessClaimNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label>Já tem seguro?*</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="hasBusinessInsuranceYes" name="hasBusinessInsurance" value="sim">
+                      <label for="hasBusinessInsuranceYes">Sim</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="hasBusinessInsuranceNo" name="hasBusinessInsurance" value="nao">
+                      <label for="hasBusinessInsuranceNo">Não</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="businessInsuranceDetails" class="conditional-field" style="display: none;">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="businessPolicyNumber">Número da Apólice*</label>
+                    <input type="text" id="businessPolicyNumber" name="businessPolicyNumber">
+                  </div>
+                  <div class="form-group">
+                    <label for="businessInsurer">Seguradora*</label>
+                    <input type="text" id="businessInsurer" name="businessInsurer">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-buttons">
+              <button type="button" class="btn btn-outline btn-prev" data-prev="2">Anterior</button>
+              <button type="button" class="btn btn-secondary btn-next" data-next="4">Próximo</button>
+            </div>
+          </div>
+          
+          <!-- Step 4: Cotação -->
+          <div class="form-step" id="step4">
+            <h3>Resultado da Cotação</h3>
+            
+            <div class="quote-result">
+              <div class="quote-plans">
+                <div class="plan-card recommended">
+                  <div class="plan-header">
+                    <span class="recommended-tag">Recomendado</span>
+                    <h4>Plano Premium</h4>
+                    <p class="plan-price"><span id="premiumPrice">R$ 1.249,90</span>/ano</p>
+                  </div>
+                  <div class="plan-features">
+                    <ul>
+                      <li>Cobertura completa contra colisão</li>
+                      <li>Proteção contra roubo e furto</li>
+                      <li>Assistência 24h em todo o Brasil</li>
+                      <li>Carro reserva por até 30 dias</li>
+                      <li>Cobertura para terceiros até R$ 200.000</li>
+                      <li>Vidros, faróis e retrovisores</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="plan-card">
+                  <div class="plan-header">
+                    <h4>Plano Básico</h4>
+                    <p class="plan-price"><span id="basicPrice">R$ 899,90</span>/ano</p>
+                  </div>
+                  <div class="plan-features">
+                    <ul>
+                      <li>Cobertura básica contra colisão</li>
+                      <li>Proteção contra roubo e furto</li>
+                      <li>Assistência 24h em todo o Brasil</li>
+                      <li>Carro reserva por até 15 dias</li>
+                      <li>Cobertura para terceiros até R$ 100.000</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <p class="quote-note">Estes valores são aproximados. Um de nossos corretores entrará em contato para personalizar sua proposta.</p>
+              
+              <div class="quote-cta">
+                <button type="button" id="whatsappBtn" class="btn btn-primary pulse">
+                  Continuar Cotação <span class="whatsapp-icon"></span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="form-buttons">
+              <button type="button" class="btn btn-outline btn-prev" data-prev="3">Anterior</button>
+            </div>
+          </div>
+          
+          <!-- Loading Overlay -->
+          <div class="loading-overlay" id="loadingOverlay">
+            <div class="loader"></div>
+            <p>Calculando sua cotação...</p>
+          </div>
+          
+          <!-- Success Overlay -->
+          <div class="success-overlay" id="successOverlay">
+            <div class="success-icon">✓</div>
+            <h3>Cotação Enviada!</h3>
+            <p>Sua cotação foi enviada com sucesso. Você será redirecionado para o WhatsApp para conversar com um de nossos corretores.</p>
+          
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="img/logo-white.svg" alt="Segura Mais">
+            <h3>Segura Mais</h3>
+          </div>
+          <p>Sua corretora de seguros de confiança, oferecendo as melhores soluções em proteção para você, sua família e seu patrimônio.</p>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contato</h3>
+          <ul>
+            <li><strong>Endereço:</strong> Av. Paulista, 1000 - São Paulo/SP</li>
+            <li><strong>CNPJ:</strong> 12.345.678/0001-90</li>
+            <li><strong>E-mail:</strong> contato@seguramais.com.br</li>
+            <li><strong>Telefone:</strong> (11) 3456-7890</li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Redes Sociais</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <img src="img/facebook.svg" alt="Facebook">
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <img src="img/instagram.svg" alt="Instagram">
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <img src="img/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="#" class="social-icon" aria-label="WhatsApp">
+              <img src="img/whatsapp.svg" alt="WhatsApp">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Segura Mais Corretora de Seguros. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/quote-form.js"></script>
+</body>
+</html>
