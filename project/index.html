@@ -75,72 +75,62 @@
     </section>
 
     <section class="insurance-types" id="insurance">
-      <div class="container">
-        <h2 class="section-title">Nossos Seguros</h2>
-        <p class="section-subtitle">Selecione um tipo de seguro para saber mais</p>
-        
-        <div class="insurance-buttons">
-          <button class="insurance-btn active" data-target="auto">Automóvel</button>
-          <button class="insurance-btn" data-target="home">Residencial</button>
-          <button class="insurance-btn" data-target="business">Empresarial</button>
+  <div class="container">
+    <h2 class="section-title">Nossos Seguros</h2>
+    <p class="section-subtitle">Selecione um tipo de seguro para saber mais</p>
+
+    <div class="insurance-buttons">
+      <button class="insurance-btn active" data-target="auto">Automóvel</button>
+      <button class="insurance-btn" data-target="business">Empresarial</button>
+    </div>
+
+    <div class="insurance-cards">
+      <div class="insurance-card active" id="auto">
+        <div class="card-icon">
+          <img src="img/car-icon.svg" alt="Ícone de Carro" />
         </div>
-        
-        <div class="insurance-cards">
-          <div class="insurance-card active" id="auto">
-            <div class="card-icon">
-              <img src="img/car-icon.svg" alt="Ícone de Carro">
-            </div>
-            <h3>Seguro Automóvel</h3>
-            <p>Proteja seu veículo contra roubo, furto, colisão e muito mais. Conte com assistência 24h, carro reserva e cobertura para terceiros.</p>
-            <ul class="insurance-features">
-              <li>Cobertura nacional</li>
-              <li>Assistência 24h</li>
-              <li>Carro reserva</li>
-              <li>Cobertura para acessórios</li>
-            </ul>
-            <br>
-            <a href="quote.html?type=auto" class="btn btn-secondary">Fazer Cotação</a>
-            <br>
-          </div>
-          
-          <div class="insurance-card" id="home">
-            <div class = "insurance-card active">
-            <div class="card-icon">
-              <img src="img/home-icon.svg" alt="Ícone de Casa">
-            </div>
-            <h3>Seguro Residencial</h3>
-            <p>Proteção completa para sua casa contra incêndio, roubo, danos elétricos e muito mais. Tenha assistência 24h para reparos emergenciais.</p>
-            <ul class="insurance-features">
-              <li>Cobertura contra incêndio</li>
-              <li>Proteção contra danos elétricos</li>
-              <li>Assistência 24h para reparos</li>
-              <li>Cobertura para equipamentos</li>
-            </ul>
-            <br>
-            <a href="quote.html?type=home" class="btn btn-secondary">Fazer Cotação</a>
-            <br>
-            </div>
-          </div>
-          
-          <div class="insurance-card" id="business">
-            <div class="card-icon">
-              <img src="img/business-icon.svg" alt="Ícone de Empresa">
-            </div>
-            <h3>Seguro Empresarial</h3>
-            <p>Soluções completas para proteger seu negócio contra incêndio, roubo, danos elétricos, lucros cessantes e responsabilidade civil.</p>
-            <ul class="insurance-features">
-              <li>Proteção patrimonial</li>
-              <li>Cobertura para lucros cessantes</li>
-              <li>Responsabilidade civil</li>
-              <li>Equipamentos e estoque</li>
-            </ul>
-            <br>
-            <a href="quote.html?type=business" class="btn btn-secondary">Fazer Cotação</a>
-            <br>
-          </div>
-        </div>
+        <h3>Seguro Automóvel</h3>
+        <p>
+          Proteja seu veículo contra roubo, furto, colisão e muito mais. Conte
+          com assistência 24h, carro reserva e cobertura para terceiros.
+        </p>
+        <ul class="insurance-features">
+          <li>Cobertura nacional</li>
+          <li>Assistência 24h</li>
+          <li>Carro reserva</li>
+          <li>Cobertura para acessórios</li>
+        </ul>
+        <br />
+        <a href="quote.html?type=auto" class="btn btn-secondary"
+          >Fazer Cotação</a
+        >
+        <br />
       </div>
-    </section>
+
+      <div class="insurance-card" id="business">
+        <div class="card-icon">
+          <img src="img/business-icon.svg" alt="Ícone de Empresa" />
+        </div>
+        <h3>Seguro Empresarial</h3>
+        <p>
+          Soluções completas para proteger seu negócio contra incêndio, roubo,
+          danos elétricos, lucros cessantes e responsabilidade civil.
+        </p>
+        <ul class="insurance-features">
+          <li>Proteção patrimonial</li>
+          <li>Cobertura para lucros cessantes</li>
+          <li>Responsabilidade civil</li>
+          <li>Equipamentos e estoque</li>
+        </ul>
+        <br />
+        <a href="quote.html?type=business" class="btn btn-secondary"
+          >Fazer Cotação</a
+        >
+        <br />
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="testimonials" id="testimonials">
       <div class="container">
@@ -163,7 +153,7 @@
             
             <div class="testimonial">
               <div class="testimonial-content">
-                <p>"O seguro residencial da Segura Mais me deu muita tranquilidade. Quando tive um problema elétrico, a assistência chegou em menos de 1 hora!"</p>
+                <p>"Seguro empresarial contratado, agora tenho mais segurança e tranquilidade para focar no meu negócio."</p>
               </div>
               <div class="testimonial-author">
                 <img src="img/client2.jpg" alt="Mariana Costa">
